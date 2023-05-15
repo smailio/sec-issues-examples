@@ -3,11 +3,11 @@ import asyncio
 import os 
 import logging
 
-GEOCODE_API_KEY = "okjNNizdbIIjkzdfn21"
+GEOCODE_API_KEY = os.getenv("GEOCODE_API_KEY")
 
 async def make_api_call(address):
     url = f"https://api-adresse.data.gouv.fr/search/?q={address}&key={GEOCODE_API_KEY}"
-    logging.ingo(f"get {url}")
+    logging.info(f"get {url}")
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
             res = await response.json()
