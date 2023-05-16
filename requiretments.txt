@@ -1,3 +1,6 @@
 aiohttp
 requesr
+request
 flask
+defusedxml
+purposefully-malicious
